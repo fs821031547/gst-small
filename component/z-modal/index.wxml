@@ -1,0 +1,11 @@
+<view class="modal-wrap" catchtouchmove="true" hidden="{{!visible}}" style="opacity:{{visible ? 1 : 0}}">
+    <view class="modal-mask" data-target="mask" catchtap="handleClose"></view>
+    <view class="modal-content m-class" style="width:{{width}}rpx; border-radius:{{radius}}rpx">
+        <view wx:if="{{closeabled}}" class="close-icon c-class" catchtap="handleClose">
+            <image class="img" src="{{imgRootPath + 'icon_close.png'}}"></image>
+        </view>
+        <slot name="header"></slot>
+        <slot name="content"></slot>
+        <slot name="footer"></slot>
+    </view>
+</view>
